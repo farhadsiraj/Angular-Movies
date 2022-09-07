@@ -1,14 +1,15 @@
 <header>
-  <nav class="navbar">
-    <a href="" class="navbar-logo">
-      <img src="assets/images/logo.png" alt="" />
-    </a>
-    <!-- ul.navbar-links>li*4>a -->
-    <ul class="navbar-links">
-      <li><a href="">Home</a></li>
-      <li><a href="">Movies</a></li>
-      <li><a href="">TV Shows</a></li>
-      <li><a href="">Genres</a></li>
-    </ul>
-  </nav>
+    <nav class="navbar">
+        <a href="" class="navbar-logo">
+            <img src="assets/images/logo.png" alt="" />
+        </a>
+        <!-- ul.navbar-links>li*4>a -->
+        <ul class="navbar-links">
+            <!-- Angular does not use href, instead uses routerLink -->
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/movies">Movies</a></li>
+            <li><a routerLink="/tvshows">TV Shows</a></li>
+            <li><a routerLink="genres">Genres</a></li>
+        </ul>
+    </nav>
 </header>
