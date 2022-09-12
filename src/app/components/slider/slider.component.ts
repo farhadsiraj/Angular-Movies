@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
+import { IMAGE_SIZES } from '../../constants/image-sizes';
 
 @Component({
   selector: 'slider',
@@ -12,6 +13,9 @@ export class SliderComponent implements OnInit {
   @Input() items: Movie[] = [];
 
   currentSlideIndex: number = 0;
+
+  // readonly makes the variable immutable, it can be read but not changed
+  readonly imageSizes = IMAGE_SIZES;
 
   constructor() {}
 
