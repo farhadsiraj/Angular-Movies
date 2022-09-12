@@ -15,10 +15,10 @@ export class MoviesService {
       .pipe() lets you change the shape of an Observable
       of() lets you change something into an Observable
   */
-  getMovies(type: string = 'upcoming') {
+  getMovies(type: string = 'upcoming', count: number = 12) {
     return this.http.get<MovieData>(`${this.baseUrl}/movie/${type}?api_key=${this.apiKey}`).pipe(
       switchMap((res) => {
-        return of(res.results);
+        return of(res.results.slice(0, count));
       })
     );
   }
