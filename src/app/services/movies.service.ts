@@ -22,4 +22,12 @@ export class MoviesService {
       })
     );
   }
+
+  getShows(type: string = 'latest', count: number = 12) {
+    return this.http.get<MovieData>(`${this.baseUrl}/tv/${type}?api_key=${this.apiKey}`).pipe(
+      switchMap((res) => {
+        return of(res.results.slice(0, count));
+      })
+    );
+  }
 }
