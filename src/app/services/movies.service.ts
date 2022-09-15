@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MovieData } from '../models/movie';
+import { Movie, MovieData } from '../models/movie';
 import { switchMap, of } from 'rxjs';
 import { ShowData } from '../models/show';
 @Injectable({
@@ -22,6 +22,10 @@ export class MoviesService {
         return of(res.results.slice(0, count));
       })
     );
+  }
+
+  getMovieDetails(id: string) {
+    return this.http.get<Movie>(`${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`);
   }
 
   searchMovies(page: number) {

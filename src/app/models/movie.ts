@@ -13,6 +13,10 @@ export interface Movie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  revenue: number;
+  runtime: number;
+  status: string;
+  // genres: Genre[];
 }
 
 export interface MovieData {
