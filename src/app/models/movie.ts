@@ -1,6 +1,7 @@
 export interface Movie {
   adult: boolean;
   backdrop_path: string;
+  budget: number;
   genre_ids: number[];
   id: number;
   original_language: string;
@@ -16,6 +17,7 @@ export interface Movie {
   revenue: number;
   runtime: number;
   status: string;
+  tagline: string;
   // genres: Genre[];
 }
 

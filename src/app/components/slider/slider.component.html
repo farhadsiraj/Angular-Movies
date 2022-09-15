@@ -19,7 +19,9 @@
           </div>
         </div>
         <div class="desc mt-6">
-          {{ item.overview }}
+          <ng-container *ngIf="item.tagline; then tagline; else overview"></ng-container>
+          <ng-template #tagline> {{ item.tagline }}</ng-template>
+          <ng-template #overview> {{ item.overview }}</ng-template>
         </div>
       </div>
     </div>
