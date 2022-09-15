@@ -1,5 +1,4 @@
 <!-- {{ items | json }} -->
-
 <div class="slider">
   <ng-container *ngFor="let item of items; let i = index">
     <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
@@ -14,11 +13,11 @@
               <span class="app-icon">star</span
               ><span class="rating-value">{{ item.vote_average | number: '1.0-1' }}</span> <span>/10</span></span
             >
-            <span>{{ item.vote_count }} Reviews</span>
-            <span>{{ item.release_date | date: 'yyyy' }}</span>
+            <span *ngIf="!isMobile">{{ item.vote_count }} Reviews</span>
+            <span *ngIf="!isMobile">{{ item.release_date | date: 'yyyy' }}</span>
           </div>
         </div>
-        <div class="desc mt-6">
+        <div class="desc mt-6" *ngIf="!isMobile">
           <ng-container *ngIf="item.tagline; then tagline; else overview"></ng-container>
           <ng-template #tagline> {{ item.tagline }}</ng-template>
           <ng-template #overview> {{ item.overview }}</ng-template>
