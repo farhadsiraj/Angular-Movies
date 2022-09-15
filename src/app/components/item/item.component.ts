@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { IMAGE_SIZES } from '../../constants/image-sizes';
+import { Show } from 'src/app/models/show';
 @Component({
   selector: 'item',
   templateUrl: './item.component.html',
