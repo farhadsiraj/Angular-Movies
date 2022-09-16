@@ -18,7 +18,7 @@ export interface Movie {
   runtime: number;
   status: string;
   tagline: string;
-  // genres: Genre[];
+  genres: Genre[];
 }
 
 export interface MovieData {
@@ -26,4 +26,9 @@ export interface MovieData {
   results: Movie[];
   total_results: number;
   total_pages: number;
+}
+
+export interface Genre {
+  id: number;
+  name: string;
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 import { IMAGE_SIZES } from '../../constants/image-sizes';
+import ISO6391 from 'iso-639-1';
 
 @Component({
   selector: 'movie',
@@ -24,7 +25,7 @@ export class MoviePageComponent implements OnInit {
   getMovie(id: string) {
     this.moviesService.getMovieDetails(id).subscribe((movieData) => {
       this.movie = movieData;
-      console.log(movieData);
+      this.movie.original_language = ISO6391.getName(this.movie.original_language);
     });
   }
 }
