@@ -56,6 +56,23 @@ export interface MovieCredits {
   }[];
 }
 
+export interface MovieReviewData {
+  id: number;
+  results: MovieReviews[];
+  page: number;
+  total_results: number;
+  total_pages: number;
+}
+
+export interface MovieReviews {
+  author: string;
+  author_details: object;
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+}
 // export const mapMovieToItem = (movie: Movie): Item => {
 //   return {
 //     id: movie.id,
