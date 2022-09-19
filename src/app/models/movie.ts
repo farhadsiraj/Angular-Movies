@@ -58,20 +58,27 @@ export interface MovieCredits {
 
 export interface MovieReviewData {
   id: number;
-  results: MovieReviews[];
+  results: MovieReview[];
   page: number;
   total_results: number;
   total_pages: number;
 }
 
-export interface MovieReviews {
+export interface MovieReview {
   author: string;
-  author_details: object;
+  author_details: ReviewAuthorDetails;
   content: string;
   created_at: string;
   id: string;
   updated_at: string;
   url: string;
+}
+
+export interface ReviewAuthorDetails {
+  name: string;
+  username: string;
+  avatar: string;
+  rating: number;
 }
 // export const mapMovieToItem = (movie: Movie): Item => {
 //   return {
