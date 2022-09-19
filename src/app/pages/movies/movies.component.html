@@ -1,11 +1,13 @@
 <div class="container">
-  <h2>Popular Movies</h2>
-  <div class="grid">
-    <div class="col-12 md:col-3 lg:col-3" *ngFor="let movie of movies">
-      <item [itemData]="movie"></item>
+  <div class="container-movies">
+    <h2>Popular Movies</h2>
+    <div class="grid">
+      <div class="col-12 md:col-3 lg:col-3" *ngFor="let movie of movies">
+        <item [itemData]="movie"></item>
+      </div>
     </div>
-  </div>
-  <div>
-    <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)"></p-paginator>
+    <div>
+      <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)"></p-paginator>
+    </div>
   </div>
 </div>

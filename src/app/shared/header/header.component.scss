@@ -5,7 +5,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    // padding: 0.5rem;
     height: 65px;
     background-color: $bgColorLight;
     margin: 0;
@@ -13,6 +13,7 @@ header {
 
     // & is the parent selector
     &-logo {
+      margin: 0 5%;
       display: block;
       img {
         width: 200px;
@@ -22,7 +23,7 @@ header {
     &-links {
       display: block;
       padding: 0;
-      margin: 0;
+      margin: 0 5%;
       list-style: none;
       li {
         display: inline;
