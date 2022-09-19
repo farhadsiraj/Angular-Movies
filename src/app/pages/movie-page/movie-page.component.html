@@ -48,7 +48,23 @@
       </div>
     </p-tabPanel>
     <p-tabPanel header="Photos"> Content 3 </p-tabPanel>
-    <p-tabPanel header="Reviews"> Content 4 </p-tabPanel>
+    <p-tabPanel header="Reviews">
+      <div class="review-card">
+        <ng-container *ngFor="let movieReview of movieReviews">
+          <h3>
+            <a [href]="movieReview.url">A review by {{ movieReview.author }}</a>
+          </h3>
+          <i class="app-icon">star</i>
+          <span>{{ movieReview.author_details.rating | number: '1.1-1' }}</span>
+          <p class="review-content">
+            {{ movieReview.content }}
+          </p>
+        </ng-container>
+      </div>
+      <pre>
+        {{ movieReviews | json }}
+      </pre>
+    </p-tabPanel>
   </p-tabView>
 </ng-container>
 
