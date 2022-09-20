@@ -37,7 +37,11 @@ export class MoviesService {
   }
 
   getMovieImages(id: string) {
-    return this.http.get<MovieImages>(`${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`);
+    return this.http.get<MovieImages>(`${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`).pipe(
+      switchMap((res) => {
+        return of(res.backdrops.concat(res.posters));
+      })
+    );
   }
 
   getMovieReviews(id: string) {

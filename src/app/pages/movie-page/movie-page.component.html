@@ -49,7 +49,7 @@
     </p-tabPanel>
     <p-tabPanel header="Images">
       <div class="grid">
-        <ng-container *ngFor="let movieImage of movieImages?.backdrops">
+        <ng-container *ngFor="let movieImage of movieImages">
           <div class="col12 md:col-4 lg:col-4">
             <p-image
               [src]="imageSizes.large + movieImage.file_path"
