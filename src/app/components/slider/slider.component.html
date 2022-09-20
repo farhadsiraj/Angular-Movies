@@ -13,7 +13,7 @@
               <span class="app-icon">star</span
               ><span class="rating-value">{{ item.vote_average | number: '1.0-1' }}</span> <span>/10</span></span
             >
-            <span *ngIf="!isMobile">{{ item.vote_count }} Reviews</span>
+            <span *ngIf="!isMobile">{{ item.vote_count }} Ratings</span>
             <span *ngIf="!isMobile">{{ item.release_date | date: 'yyyy' }}</span>
           </div>
         </div>
