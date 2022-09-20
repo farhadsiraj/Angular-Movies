@@ -9,5 +9,6 @@
       <img [src]="imageSizes.medium + itemData.poster_path" [alt]="itemData.title" />
     </div>
     <div class="item-title">{{ itemData.title }}</div>
+    <div class="item-date">{{ itemData.release_date | date: 'mediumDate' }}</div>
   </a>
 </ng-container>
