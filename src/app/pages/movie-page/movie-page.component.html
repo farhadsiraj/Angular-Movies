@@ -1,6 +1,6 @@
 <ng-container *ngIf="movie">
   <slider [items]="[movie]" [isBanner]="true"> </slider>
-  <p-tabView>
+  <p-tabView class="main">
     <p-tabPanel header="Overview">
       <div class="grid">
         <div class="col-12 md:col-3 lg:col-3">
@@ -49,21 +49,27 @@
     </p-tabPanel>
     <p-tabPanel header="Photos"> Content 3 </p-tabPanel>
     <p-tabPanel header="Reviews">
-      <div class="review-card">
+      <div class="review">
         <ng-container *ngFor="let movieReview of movieReviews">
-          <h3>
-            <a [href]="movieReview.url">A review by {{ movieReview.author }}</a>
-          </h3>
-          <i class="app-icon">star</i>
-          <span>{{ movieReview.author_details.rating | number: '1.1-1' }}</span>
-          <p class="review-content">
-            {{ movieReview.content }}
-          </p>
+          <div class="review-card">
+            <div class="review-details">
+              <h3>
+                <a [href]="movieReview.url">A review by {{ movieReview.author }}</a>
+              </h3>
+              <i class="app-icon">star</i>
+              <span>{{ movieReview.author_details.rating | number: '1.1-1' }}</span>
+            </div>
+            <div class="review-content">
+              <p>
+                {{ movieReview.content }}
+              </p>
+            </div>
+          </div>
         </ng-container>
       </div>
-      <pre>
+      <!-- <pre>
         {{ movieReviews | json }}
-      </pre>
+      </pre> -->
     </p-tabPanel>
   </p-tabView>
 </ng-container>
