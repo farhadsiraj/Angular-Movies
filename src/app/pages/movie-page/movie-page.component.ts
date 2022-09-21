@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Movie, MovieReview, MovieVideo, MovieImages, MovieImage } from 'src/app/models/movie';
+import { Movie, MovieReview, MovieVideo, MovieImages, MovieImage, MovieCredits } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 import { IMAGE_SIZES } from '../../constants/image-sizes';
 import ISO6391 from 'iso-639-1';
@@ -14,6 +14,9 @@ export class MoviePageComponent implements OnInit {
   movie: Movie | null = null;
   movieVideos: MovieVideo[] = [];
   movieImages: MovieImage[] = [];
+  movieCredits: MovieCredits | null = null;
+  // movieCredits: MovieCredits[] = [];
+  director: string = '';
   movieReviews: MovieReview[] = [];
   imageSizes = IMAGE_SIZES;
 
@@ -24,6 +27,7 @@ export class MoviePageComponent implements OnInit {
       this.getMovie(id);
       this.getMovieVideos(id);
       this.getMovieImages(id);
+      this.getMovieCredits(id);
       this.getMovieReviews(id);
     });
   }
@@ -44,6 +48,15 @@ export class MoviePageComponent implements OnInit {
   getMovieImages(id: string) {
     this.moviesService.getMovieImages(id).subscribe((movieImagesData) => {
       this.movieImages = movieImagesData;
+    });
+  }
+
+  getMovieCredits(id: string) {
+    this.moviesService.getMovieCredits(id).subscribe((movieCreditsData) => {
+      this.movieCredits = movieCreditsData;
+      let director: { name: string }[] = this.movieCredits.crew.filter((person) => person.job === 'Director');
+      console.log(this.movieCredits);
+      this.director = director[0].name;
     });
   }
 

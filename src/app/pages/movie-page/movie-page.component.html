@@ -1,6 +1,6 @@
 <ng-container *ngIf="movie">
   <slider [items]="[movie]" [isBanner]="true"> </slider>
-  <p-tabView class="main">
+  <p-tabView class="tab">
     <p-tabPanel header="Overview">
       <div class="grid">
         <div class="col-12 md:col-3 lg:col-3">
@@ -89,9 +89,23 @@
       </pre> -->
     </p-tabPanel>
   </p-tabView>
-  <p-carousel *ngIf="movieCredits" [value]="movieCredits.cast">
+  <!-- <h2 id="cast">Cast</h2> -->
+  <p-carousel [numVisible]="5" *ngIf="movieCredits" [value]="movieCredits.cast">
+    <ng-template pTemplate="header">
+      <h2>Cast</h2>
+    </ng-template>
     <ng-template let-actor pTemplate="item">
-      {{ actor.name }}
+      <div class="actor">
+        <ng-container *ngIf="actor.profile_path !== null; then image; else default"></ng-container>
+        <ng-template #image>
+          <img [src]="imageSizes.medium + actor.profile_path" alt="" />
+        </ng-template>
+        <ng-template #default>
+          <img class="avatar" src="assets/avatar.jpg" alt="" />
+        </ng-template>
+        <div class="actorName">{{ actor.name }}</div>
+        <div class="characterName">{{ actor.character }}</div>
+      </div>
     </ng-template>
   </p-carousel>
 </ng-container>

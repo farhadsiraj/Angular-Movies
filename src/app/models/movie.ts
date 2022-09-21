@@ -54,11 +54,24 @@ export interface MovieImage {
 }
 
 export interface MovieCredits {
+  id: number;
   cast: {
     name: string;
     profile_path: string;
   }[];
+  crew: {
+    name: string;
+    profile_path: string;
+    job: string;
+  }[];
 }
+
+// export interface MovieCredits {
+//   cast: {
+//     name: string;
+//     profile_path: string;
+//   }[];
+// }
 
 export interface MovieReviewData {
   id: number;
