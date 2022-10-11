@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs';
 import { Movie } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -9,11 +11,18 @@ import { MoviesService } from 'src/app/services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
-
-  constructor(private movieService: MoviesService) {}
+  genreId: string | null = null;
+  constructor(private movieService: MoviesService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getMoviesPage(1);
+    this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
+      if (genreId) {
+        this.genreId = genreId;
+        this.getMoviesByGenre(genreId, 1);
+      } else {
+        this.getMoviesPage(1);
+      }
+    });
   }
 
   getMoviesPage(page: number) {
@@ -22,7 +31,18 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+  getMoviesByGenre(genreId: string, page: number) {
+    this.movieService.getMoviesByGenre(genreId, page).subscribe((movies) => {
+      this.movies = movies;
+    });
+  }
+
   paginate(event: any) {
-    this.getMoviesPage(event.page + 1);
+    const pageNumber = event.page + 1;
+    if (this.genreId) {
+      this.getMoviesByGenre(this.genreId, pageNumber);
+    } else {
+      this.getMoviesPage(pageNumber);
+    }
   }
 }
