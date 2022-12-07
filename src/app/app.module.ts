@@ -19,6 +19,9 @@ import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { GenresComponent } from './pages/genres/genres.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
+import { TvShowComponent } from './pages/tvshow/tvshow.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { InputTextModule } from 'primeng/inputtext';
     ItemComponent,
     MoviePageComponent,
     VideoEmbedComponent,
-    GenresComponent
+    GenresComponent,
+    TvShowsComponent,
+    TvShowComponent
   ],
   imports: [
     BrowserModule,
