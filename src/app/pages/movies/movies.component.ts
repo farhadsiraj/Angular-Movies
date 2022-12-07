@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
-import { Movie } from 'src/app/models/movie';
+import { Item } from 'src/app/components/item/item';
+import { mapMovieToItem, Movie } from 'src/app/models/movie';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[] = [];
+  movies: Item[] = [];
   genreId: string | null = null;
   searchValue: string | null = null;
   // CREATE VARIABLE TO HOLD TOTAL NUMBER OF MOVIES RETURNED FROM SEARCH TO FIX BUG WITH TOTAL NUMBER OF PAGES
@@ -30,13 +31,13 @@ export class MoviesComponent implements OnInit {
 
   getMoviesPage(page: number, searchValue?: string) {
     this.movieService.searchMovies(page, searchValue).subscribe((movies) => {
-      this.movies = movies;
+      this.movies = movies.map((movie) => mapMovieToItem(movie));
     });
   }
 
   getMoviesByGenre(genreId: string, page: number) {
     this.movieService.getMoviesByGenre(genreId, page).subscribe((movies) => {
-      this.movies = movies;
+      this.movies = movies.map((movie) => mapMovieToItem(movie));
     });
   }
 

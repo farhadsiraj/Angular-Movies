@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { IMAGE_SIZES } from '../../constants/image-sizes';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { Item } from '../item/item';
 
 @Component({
   selector: 'slider',
@@ -11,7 +12,7 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   animations: [trigger('slideFade', [state('void', style({ opacity: 0 })), transition('void <=> *', [animate('1s')])])]
 })
 export class SliderComponent implements OnInit {
-  @Input() items: Movie[] = [];
+  @Input() items: Item[] = [];
   @Input() isBanner: boolean = false;
 
   currentSlideIndex: number = 0;

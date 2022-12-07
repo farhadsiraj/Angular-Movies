@@ -1,5 +1,6 @@
 <ng-container *ngIf="itemData">
-  <a class="item" [routerLink]="'/movie/' + itemData.id">
+  <a class="item" [routerLink]="itemData.routePath">
+    <!-- <a class="item" [routerLink]="'/movie/' + itemData.id"> -->
     <div class="item-rating">
       <i class="app-icon">star</i>
       <span>{{ itemData.vote_average }}</span
@@ -9,6 +10,6 @@
       <img [src]="imageSizes.medium + itemData.poster_path" [alt]="itemData.title" />
     </div>
     <div class="item-title">{{ itemData.title }}</div>
-    <div class="item-date">{{ itemData.release_date | date: 'mediumDate' }}</div>
+    <div class="item-date">{{ itemData.release_date | date : 'mediumDate' }}</div>
   </a>
 </ng-container>
