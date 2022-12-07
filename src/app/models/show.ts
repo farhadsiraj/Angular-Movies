@@ -12,6 +12,7 @@ export interface TvShow {
   popularity: number;
   poster_path: string;
   release_date: string;
+  first_air_date: string;
   name: string;
   video: boolean;
   vote_average: number;
@@ -20,6 +21,11 @@ export interface TvShow {
   runtime: number;
   status: string;
   genres: Genre[];
+  origin_country: string[];
+  number_of_episodes: number;
+  number_of_seasons: number;
+  tagline: string;
+  episode_run_time: number[];
 }
 
 export interface ShowData {
@@ -52,6 +58,31 @@ export interface TvShowCredits {
   }[];
 }
 
+export interface ShowReviewData {
+  id: number;
+  results: ShowReview[];
+  page: number;
+  total_results: number;
+  total_pages: number;
+}
+
+export interface ShowReview {
+  author: string;
+  author_details: ReviewAuthorDetails;
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+}
+
+export interface ReviewAuthorDetails {
+  name: string;
+  username: string;
+  avatar: string;
+  rating: number;
+}
+
 export const mapTvShowToItem = (tvShow: TvShow): Item => {
   return {
     id: tvShow.id,
@@ -60,8 +91,9 @@ export const mapTvShowToItem = (tvShow: TvShow): Item => {
     vote_average: tvShow.vote_average,
     backdrop_path: tvShow.backdrop_path,
     vote_count: tvShow.vote_count,
-    release_date: tvShow.release_date,
+    release_date: tvShow.first_air_date,
     overview: tvShow.overview,
-    routePath: '/tvshow/' + tvShow.id
+    routePath: '/tvshow/' + tvShow.id,
+    tagline: tvShow.tagline
   };
 };

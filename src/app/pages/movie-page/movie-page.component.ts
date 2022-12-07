@@ -57,7 +57,6 @@ export class MoviePageComponent implements OnInit, OnDestroy {
     this.moviesService.getMovieCredits(id).subscribe((movieCreditsData) => {
       this.movieCredits = movieCreditsData;
       let director: { name: string }[] = this.movieCredits.crew.filter((person) => person.job === 'Director');
-      console.log(this.movieCredits);
       this.director = director[0].name;
     });
   }

@@ -13,6 +13,31 @@
       }
     }
   }
+  .p-tabview {
+    margin: 0 5%;
+    // background-color: black;
+  }
+  .p-tabview-panels {
+    padding: 0;
+    background-color: $bgColor;
+  }
+
+  .p-carousel-content {
+    margin: 0 5%;
+  }
+
+  .p-carousel-header {
+    margin: 0 5%;
+  }
+  .p-carousel-item {
+    // display: flex;
+    // border: solid 5px green;
+    // flex-direction: column;
+    // justify-content: space-between;
+  }
+  .class {
+    margin: 0 5%;
+  }
 }
 
 .poster {
@@ -36,14 +61,47 @@
   }
 }
 
+#cast {
+  margin: 0 5%;
+}
+
 .actor {
   padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   img {
     width: 100%;
+  }
+  .actorName {
+    font-weight: bold;
+    margin: 15px 0 0 0;
   }
   span {
     display: block;
     text-align: center;
     margin: 10px 0;
   }
+}
+
+.avatar {
+  padding: 25% 0;
+  background-color: white;
+  filter: invert(100%);
+}
+
+.review-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .app-icon {
+    margin: 0 5px 0 15px;
+    color: #d4af37;
+  }
+}
+
+.review-content {
+  line-height: 1.5rem;
 }
