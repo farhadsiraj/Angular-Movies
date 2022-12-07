@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TvShow, TvShowCredits, ShowData, TvShowImages, TvShowVideoData } from '../models/show';
+import { TvShow, TvShowCredits, ShowData, TvShowImages, TvShowVideoData, ShowReviewData } from '../models/show';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { GenreData } from '../models/genre';
@@ -58,6 +58,14 @@ export class TvShowsService {
 
   getTvShowCredits(id: string) {
     return this.http.get<TvShowCredits>(`${this.baseUrl}/tv/${id}/credits?api_key=${this.apiKey}`);
+  }
+
+  getShowReviews(id: string) {
+    return this.http.get<ShowReviewData>(`${this.baseUrl}/tv/${id}/reviews?api_key=${this.apiKey}`).pipe(
+      switchMap((res) => {
+        return of(res.results);
+      })
+    );
   }
 
   getTvShowSimilar(id: string) {
