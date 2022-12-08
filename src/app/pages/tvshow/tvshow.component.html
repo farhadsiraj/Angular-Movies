@@ -38,10 +38,10 @@
             <div class="label">Episodes:</div>
             <div class="value">{{ tvShow.number_of_episodes }}</div>
           </div>
-          <div class="stat">
+          <!-- <div class="stat">
             <div class="label">Duration:</div>
             <div class="value">{{ tvShow.episode_run_time }} Minutes</div>
-          </div>
+          </div> -->
 
           <!-- <div class="stat">
             <div class="label">Status:</div>
@@ -108,11 +108,12 @@
       </pre> -->
     </p-tabPanel>
   </p-tabView>
+
   <p-carousel [numVisible]="5" *ngIf="tvShowCredits" [value]="tvShowCredits.cast">
     <ng-template pTemplate="header">
       <h2>Cast</h2>
     </ng-template>
-    <ng-template let-actor pTemplate="item">
+    <ng-template let-actor pTemplate="item" class="actor">
       <div class="actor">
         <ng-container *ngIf="actor.profile_path !== null; then image; else default"></ng-container>
         <ng-template #image>
