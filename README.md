@@ -1,27 +1,20 @@
-# MoviesApp
+# farhadFlix
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+farhadFLIX is a website built with TypeScript and Angular that fetches and displays data from The Movie Database. Users can browse Movies and TV Shows by genre or search for a specific title. Once a movie or show is selected users can view the overview tab to see details about the movie/show and photos of the cast. Other tabs include official video trailers, images, and reviews from users of TMDB.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![farhadFlix1](https://farhadsiraj.github.io/images/farhadflix_home.png)
 
-## Code scaffolding
+![farhadFlix2](https://farhadsiraj.github.io/images/ff_screen.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I used SCSS for the styling, Angular Animations for the slider component, and PrimeNG for the Tabs, Carousel, Sliders, Pagination, Video Player, and Image Gallery. I also used RXjS to handle asynchronous data calls from TMDB API.
 
-## Build
+[Deployed Link]([https://farhadcoin-1ff38.web.app](https://farhadflix.surge.sh/))
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Stack
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular](https://angular.io/)
+- [RXjS](https://rxjs.dev/)
+- [SCSS](https://sass-lang.com/)
+- [PrimeNG](https://primeng.org/)
