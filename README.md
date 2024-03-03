@@ -5,7 +5,7 @@ farhadFLIX is a website built with TypeScript and Angular that fetches and displ
 
 ![farhadFlix1](https://farhadsiraj.github.io/images/farhadflix_home.png)
 
-I used SCSS for the styling, Angular Animations for the slider component, and PrimeNG for the Tabs, Carousel, Sliders, Pagination, Video Player, and Image Gallery. I also used RXjS to handle asynchronous data calls from TMDB API.
+I used Sass for the styling, Angular Animations for the slider component, and PrimeNG for the Tabs, Carousel, Sliders, Pagination, Video Player, and Image Gallery. I also used RXjS to handle asynchronous data calls from TMDB API.
 
 [Deployed Link](https://farhadflix.surge.sh/)
 
@@ -14,5 +14,5 @@ I used SCSS for the styling, Angular Animations for the slider component, and Pr
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://angular.io/)
 - [RXjS](https://rxjs.dev/)
-- [SCSS](https://sass-lang.com/)
+- [Sass](https://sass-lang.com/)
 - [PrimeNG](https://primeng.org/)
