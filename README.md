@@ -13,6 +13,6 @@ I used Sass for the styling, Angular Animations for the slider component, and Pr
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Angular](https://angular.io/)
-- [RXjS](https://rxjs.dev/)
+- [RxJS](https://rxjs.dev/)
 - [Sass](https://sass-lang.com/)
 - [PrimeNG](https://primeng.org/)
