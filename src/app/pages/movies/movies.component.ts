@@ -16,7 +16,7 @@ export class MoviesComponent implements OnInit {
   searchValue: string | null = null;
   // CREATE VARIABLE TO HOLD TOTAL NUMBER OF MOVIES RETURNED FROM SEARCH TO FIX BUG WITH TOTAL NUMBER OF PAGES
 
-  constructor(private movieService: MoviesService, private route: ActivatedRoute) {}
+  constructor(private movieService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
@@ -39,6 +39,11 @@ export class MoviesComponent implements OnInit {
     this.movieService.getMoviesByGenre(genreId, page).subscribe((movies) => {
       this.movies = movies.map((movie) => mapMovieToItem(movie));
     });
+  }
+
+  resetSearch() {
+    this.searchValue = ''
+    this.getMoviesPage(1)
   }
 
   paginate(event: any) {

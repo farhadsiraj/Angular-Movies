@@ -5,3 +5,17 @@
 .container-shows {
   margin: 0 5%;
 }
+
+.reset-button {
+  margin-top: .5rem;
+  border-radius: 3px;
+  border: 1px solid #383838;
+  color: lightgrey;
+  padding: .5rem;
+  background: #121212;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  border-color: #d4af37;
+}

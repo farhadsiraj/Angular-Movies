@@ -15,7 +15,7 @@ export class TvShowsComponent implements OnInit {
   genreId: string | null = null;
   searchValue: string | null = null;
 
-  constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) {}
+  constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
@@ -40,6 +40,11 @@ export class TvShowsComponent implements OnInit {
     });
   }
 
+  resetSearch() {
+    this.searchValue = ''
+    this.getPagedTvShows(1)
+  }
+
   paginate(event: any) {
     const pageNumber = event.page + 1;
 
@@ -60,3 +65,4 @@ export class TvShowsComponent implements OnInit {
     }
   }
 }
+
